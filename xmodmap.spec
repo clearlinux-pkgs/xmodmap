@@ -6,7 +6,7 @@
 #
 Name     : xmodmap
 Version  : 1.0.10
-Release  : 3
+Release  : 4
 URL      : https://www.x.org/releases/individual/app/xmodmap-1.0.10.tar.gz
 Source0  : https://www.x.org/releases/individual/app/xmodmap-1.0.10.tar.gz
 Source99 : https://www.x.org/releases/individual/app/xmodmap-1.0.10.tar.gz.sig
