@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xCFDF148828C642A7 (alanc@freedesktop.org)
 #
 Name     : xmodmap
-Version  : 1.0.10
-Release  : 5
-URL      : https://www.x.org/releases/individual/app/xmodmap-1.0.10.tar.gz
-Source0  : https://www.x.org/releases/individual/app/xmodmap-1.0.10.tar.gz
-Source1  : https://www.x.org/releases/individual/app/xmodmap-1.0.10.tar.gz.sig
+Version  : 1.0.11
+Release  : 6
+URL      : https://www.x.org/releases/individual/app/xmodmap-1.0.11.tar.gz
+Source0  : https://www.x.org/releases/individual/app/xmodmap-1.0.11.tar.gz
+Source1  : https://www.x.org/releases/individual/app/xmodmap-1.0.11.tar.gz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : MIT-Opengroup
@@ -53,23 +53,23 @@ man components for the xmodmap package.
 
 
 %prep
-%setup -q -n xmodmap-1.0.10
-cd %{_builddir}/xmodmap-1.0.10
+%setup -q -n xmodmap-1.0.11
+cd %{_builddir}/xmodmap-1.0.11
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1604542369
+export SOURCE_DATE_EPOCH=1657508386
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -81,10 +81,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1604542369
+export SOURCE_DATE_EPOCH=1657508386
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xmodmap
-cp %{_builddir}/xmodmap-1.0.10/COPYING %{buildroot}/usr/share/package-licenses/xmodmap/232975656d77e0826ea5a6329c5a44dd28525ecf
+cp %{_builddir}/xmodmap-1.0.11/COPYING %{buildroot}/usr/share/package-licenses/xmodmap/232975656d77e0826ea5a6329c5a44dd28525ecf
 %make_install
 
 %files
